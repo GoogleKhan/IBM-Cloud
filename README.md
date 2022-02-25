@@ -356,17 +356,351 @@ Example:
 		}
 
 ---------------------------------------------------------------
-Loops
-Operator
-method
-method overloading
-constructors
+Loops:
+----------
+1. for
+2. while
+3. do-while
+4. forEach/enhanced for loop (used with array /collections)
 
-Array
----------------------------------
+	for(<type> <var> : <arrayORcollection>)
+	{
+		//body
+	}
+------------------------------------------------------------------
+initialization
+condition
+updation
+
+----------------
+1. For loop:
+=============
+ for(<initialization>; <condition>; <updation>)
+	{
+		//body
+	}
+	
+2. While loop:
+=============
+<initialization>;
+	----
+	----
+ while(<condition>)
+	{
+		//body
+		<updation>
+	}
+	
+1. Do-While loop:
+=============
+ <initialization>;
+	----
+	----
+	do{
+		//body
+		<updation>
+	}
+ while(<condition>);
+-------------------------------------------------------------	
+Operators:
+=========
+1. Arithmetic Operators
+2. Relational Operators
+3. Equality Operators
+4. String concatenation Operators
+5. Boolean Logical Operators
+6. Variable increment/decrement Operators
+7. Ternary Operators
+8. Assignment operator
+9. Bitwise operator (NC)
+10. new operator
+11. instanceof operator (NC)
+
+--------------------------------------------------------
+1. Arithmetic Operators:
+==========================
+a) +, -, *, /, %
+
+b) int a =10, b =3;
+	System.out.println(a + b); // 13
+	System.out.println(a - b); // 7
+	System.out.println(a * b); // 30
+	System.out.println(a / b); // 3 (Quotient)
+	System.out.println(a % b); // 1 (Remender)
+
+b) Extended assignment operators:
+     a = a + b; ==> a += b;
+     a = a - b; ==> a -= b;
+     a = a * b; ==> a *= b;
+     a = a / b; ==> a /= b;
+     a = a % b; ==> a %= b;	 
+
+d) int x = 10;
+	System.out.println(x/0); // java.lang.Arithmetic Exception
+	System.out.println(x/0.0); // Infinity
+	System.out.println(-x/0.0); // -Infinity
+	System.out.println(0.0/0.0); // NaN(Not a Number)
+
+e) Max(int, <type1>, <type2>, .....)
+	     byte b1 = 10;
+		 short s1 = 20;
+		 
+		 int x = b1 + s1; // MAX(int, byte, short )
+------------------------------------------------------
+byte -> short -> int -> long -> float -> double
+        char ->  int
+------------------------------------------------------
+2. Relational Operators:
+==========================
+a) <, >, <=, >=
+
+b) Operands: numeric data types
+	result : boolean
+
+Example:
+-----------
+		int x =15;
+		boolean b = 10 < x < 20; // Error
+				  =  true < 20 
+		
+Solution: boolean b = (10 < x) & (x < 20); // true
 
 
+3. Equality Operators:
+==========================
+a) ==, != 
+
+b) Operands: all types
+	result : boolean 
+
+Example:
+----------
+   int i =10;
+   boolean b = i == 15; // false
+		   b = b == false; // true
+
+  Car c1 = new Car();
+  Car c2 = new Car();
+  
+  boolean b2 = c1 == c2; // false.
+  
+-----------------------------------------------
+4. String concatenation Operators:
+-----------------------------------
+     int a = 10;
+	 int b = 5;
+
+	 int x = a + b; // 15
+-----------------------------
+    String a = "I love ";	 
+    String b = "Java";	
+
+	String y = a + b; // "I love Java"
+----------------------------------------------
+
+    String a = "ABC";	 
+    int b = 123;	
+
+	String z = a + b; // "ABC123"
  
+-----------------------------------------------
+5. Boolean Logical Operators:
+===============================
+a) &, |, ^, !
+
+b) a & b ==> a.b
+   a | b ==> a+b
+			 _       _
+   a ^ b ==> a.b + a.b
+	
+c) Operands: boolean expr
+	result : boolean
+
+Example:
+-----------
+		int x =15;
+	
+       boolean b = (10 < x) & (x < 20); // true
+
+-----------------------------------------------------------------
+6. Variable increment/decrement Operators:
+==============================================
+a) ++, --  (pre/post)
+
+		int i = 10;
+
+		int j = ++i; // pre-increment
+
+		System.out.println(i); // 11
+		System.out.println(j); // 11
+ -----------------------------------------
+		int i = 10;
+
+		int j = i++; // post-increment
+
+		System.out.println(i); // 11
+		System.out.println(j); // 10
+
+----------------------------------------------------------------------
+7. Ternary Operators:
+------------------------
+Syntax:
+-------
+		<boolExpr> ? <expr1> : <expr2>
+					  (true)   (false)
+
+     int a = 20, b = 15;
+
+		int max;
+
+		if (a > b) {
+			max = a;
+		}
+		else {
+			max = b;
+		}
+		
+		System.out.println(max);
+------------------------------------------
+		int a = 20, b = 15;
+
+		int max = a > b ? a : b;
+
+		System.out.println(max);
+
+-----------------------------------------------------------------------	
+8. Assignment operator:
+=============================
+a)    =
+
+b) widening is done implicitly.
+   narrowing requires casting.
+   
+   int x = 2.3 ; //ERROR cannot assign double to int
+  
+problem:  float f = 2.5; //ERROR cannot assign double to float
+
+Solution-1:  float f = (float)2.5; //use casting
+Solution-1:  float f = 2.5F; //only for float
+
+Lab-2:
+========
+WAP to find greatest number among three numbers
+	a) using if-else
+	b) using ternary operator
+
+===========================================================================
+Methods:
+==============
+-> It is a block or group of statements which can be called by another code multiple times.
+
+Syntax: 
+--------
+	<modifier> <returnType> <name>(<parameterList>) <throws>
+			{
+				//body
+			}
+
+Example:
+----------
+		void foo()
+			{
+				// body
+			}
+
+calling the methods:
+----------------------
+  <ClassName>.<Method>(<parameters>); // only static methods
+  <ObjRef>.<Method>(<parameters>); // instance as well as static methods
+
+------------------------------------------------------------------------------
+Method Overloading:[Compile-time | Early | Static polymorphism]
+---------------------------------------------------------------
+Within a Java class two or more than two methods having same name but 
+	different parameters called Overloaded method and this process is caled method overloading.
+
+IF METHOD NAMES ARE SAME:
+	a) Number of parameters 
+	b) Data type of parameters
+	c) Order of data types
+
+----------------------------------------------------------------
+constructors:
+-----------------
+1. Constructor are special members of a class.
+2. It is similar to the method but not a method.
+3. Constructors are used to construct initial state of an object.
+4. Rules:
+	a) Same name as of the class.
+	b) Only access modifier is permissible (public, protected, private, default)
+	c) No return type even void.
+
+*) Every class must have atleast one constructor
+*) Constructor can be ovrloaded
+
+Lab-3:
+--------------------------------------------------------------------
+
+Arrays:
+---------
+1. Array is a linear data structure.
+2. Array is the collection of similar kind of objects/data/elements
+3. Array are indexed and index starts from zero.
+4. In java arrays are objects.
+5. If we use an invalid index with array, we will get AIOBE(ArrayIndexOutofBoundsException).
+6. Every array has an instance field named 'length' which store the size of an array.
+ 
+Syntax:
+---------
+a.  <type>[] <var> = new <type>[<size>]
+
+		int[] arr = new int[3];
+				arr[0] = 13;
+				arr[1] = 23;
+				arr[2] = 99;
+				
+
+b.  <type>[] <var> = {<values>}
+			
+			int[] brr ={13, 23, 99};
+--------------------------------------------------------------------------------
+How to access array elements:
+-----------------------------
+1. for loop:
+-------------
+ for(int i=0; i < arr.length; i++)
+	{
+		
+		int x = arr[i];
+		SOP(x);
+		
+	}
+
+2. Enhance for loop:
+------------------------
+ for(int x : arr)
+    {
+		SOP(x);
+	}
+
+---------------------------------------------------------------------
+Access Modifier:
+-----------------
+a) public : is accessible from everywhere.
+
+b) protected : a) is only accessible from its package. Package must be same. 
+			   b) It can go out side the package through inheritance.	
+			   
+c) default : is only accessible from its package.Package must be same. Never goes out side the package.
+
+d) private :  Never goes out side the class.is only accessible from its class.
+
+
+
+
+
+
+
 
 
 
