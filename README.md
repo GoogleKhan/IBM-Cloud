@@ -683,6 +683,12 @@ How to access array elements:
 		SOP(x);
 	}
 
+
+Lab-3:
+------------
+a) Reverse an array 
+b) U have 2 different arrays and u have to merge into a single array.
+c) Take an array of numbers and print sum and average of its elements.
 ---------------------------------------------------------------------
 Access Modifier:
 -----------------
@@ -694,6 +700,176 @@ b) protected : a) is only accessible from its package. Package must be same.
 c) default : is only accessible from its package.Package must be same. Never goes out side the package.
 
 d) private :  Never goes out side the class.is only accessible from its class.
+
+-------------------------------------------------------------------------------------
+Package:
+-----------
+It is an encapsulation mechanism to group related classes and interfaces.
+
+hospital
+	|- A.java, B.java, C.java
+	|- D.java, E.java
+	|- F.java, G. java, H.java ...
+
+
+hospital
+	|- A.java, B.java
+	|- doctors
+		|- C.java
+		|- cardio
+			|- D.java
+		|- ent
+			|- E.java
+    |- patient
+		|- F.java
+	|-staff
+		|- G.java, H.java
+
+
+package test;
+
+import hospital.doctors.cardio.D; // import class D only from the package 
+import hospital.staff.*; // will import all public classes from the package
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		p1.A a1 = new p1.A(); // fullyQualifiedName
+		p2.B b1 = new p2.B();
+
+		D d1 = new D(); // import statement
+		
+		G g1= new G();
+		}
+}
+
+---------------------------------------------------------------------------
+Java Coding Convension (not a rule)
+--------------------------------------
+Class Name           -> My, MyFirst, MyFirstClass
+method/variable name -> my, myFirst, myFirstVar
+Enum/Constants       -> MY, MY_FIRST, MY_FIRST_CONT
+
+-------------------------------------------------------------------------
+1. Syntax error or compile time errors
+2. Exception or runtime error
+3. logical errors
+
+
+Exception Handling:
+--------------------
+1. Exceptions are runtime errors.
+2. In java exceptions are objects derived from Throwable class.
+3. When exception accurs and there is no code for handling, 
+	then program will terminate abnormally.
+
+TRY-CATCH-FINALLY
+=====================
+try{
+	// risky code
+}
+catch(Exception e){
+	// exception handling code
+}
+finaly{
+	// clean up code
+}
+
+-> a try can have zero or more catch and/or zero or 1 finally.
+
+-> a try without catch/finally or catch/finally without try is an error.
+
+THROWS
+===============
+*) Exceptions are always occured at Runtime.
+
+
+Exceptions can be divided into 2 diffrent categories:
+	1. Unchecked Exception
+		-> Object of Error and RuntimeException and their sub classes called unchecked exceptions.
+		-> Compiler will not check (force) to handle these kind of exceptions.
+		-> They are either irrecoverables or programming mistakes and we should not handle them but try to avoid them
+			
+	2. Checked Exception
+		-> Objects of all other exceptions called checked exceptions.
+		-> Compiler will check (force) to handle these kind of exceptions.
+        -> We have to write exception handling code	
+				either -> try-catch
+				or     -> throws
+
+------------------------------------------------------------
+THROW:
+-----------
+We can create custom exceptions in Java.
+
+-> throw keyword is used to throw exceptions programatically.
+
+public class MyException extends  Exception
+{
+	public MyException(String reason){
+		super(reason);
+	}
+}
+
+--------------------------------------------------------------
+Object Oriented Programming:
+------------------------------
+Inheritance:
+--------------
+It is a way of code reusability.
+
+Different kind of Inheritance:
+-------------------------------
+1. Single
+2. Multiple
+
+--------------------------------
+-> A class can use extends keyword to specify its parent.
+-> In Java, Classes support single inheritance.
+-> If any class doesnot specify its parent, then it will inherit java.lang.Object class.
+
+----------------------------------------------------------
+Method Overriding:
+---------------------
+-> Between the two classes having IS-A relationship(i.e. inheritance) both 
+		have same method having same name and same parameters called method overriding.
+		
+Rules
+=======
+1. Same name and same parameter.
+
+2. Return Type:
+-----------------
+	1. if primitive , must be same
+	2. if reference , it can be same or any sub type (co-varient type).
+
+3. Accessbility:
+-----------------
+	1. private -> deafult -> protected -> public
+	2. It can be widen.
+
+4. Throws clause:
+-----------------
+	1. It can be narrow. ( a) no throws  b) throws same c) throws any sub type not super type)
+
+*) constructor, private method, static method, final method will not take participation in method overriding.
+
+-----------------------------------------------------------------------------
+abstract and final keywords:
+----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
