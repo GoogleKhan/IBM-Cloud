@@ -1238,6 +1238,8 @@ java.lang.Object :
 
 
 
+
+
 4. Object clone() throws Clonable
 5. Class getClass()
 6. void finalize()
