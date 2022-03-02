@@ -1238,17 +1238,61 @@ java.lang.Object :
 
 
 
+4. Object clone() throws Clonable:
+-----------------------------------
+-> It is used to create a exact duplicate copy of an object.
+
+@Override
+	public Employee clone() throws CloneNotSupportedException {
+		return (Employee) super.clone();
+	}
 
 
-4. Object clone() throws Clonable
-5. Class getClass()
-6. void finalize()
+       Employee e1 = new Employee();
+		e1.setAge(24);
+		e1.setName("Shadab");
+		e1.setSalary(1234.5);
+
+		Employee e2 = e1.clone();
 
 
 
+5. Class getClass():
+--------------------
+-> Returns the runtime class of this Object. 
+
+6. void finalize():
+--------------------
+
+It is a method of Object class, called by Garbage Collector(GC) just before destroying the object.
+
+======================================================================================================
+Collection Framework [java.util.*]
+------------------------------------
+-> It is the Data Structure of Java Programming.
+
+java.util.Set:
+---------------
+-> Set provides uniqueness. Means duplicate values are not allowed.
+-> Set does not maintained any order.
+-> We cannot use index with Set.
+
+java.util.List:
+---------------
+-> List can contains duplicate elements.
+-> List maintains insertion order.
+-> We can index with list
 
 
+java.util.Map:
+------------------
+-> It is a key-value pair.
+-> Keys should be unique.
 
+
+Genrics:
+--------------
+Generics provide Type Safety.
 
 
 

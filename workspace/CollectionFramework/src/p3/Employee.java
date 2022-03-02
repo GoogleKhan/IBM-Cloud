@@ -1,11 +1,10 @@
-package p1;
+package p3;
 
-public class Employee implements Cloneable{
+public class Employee implements Comparable<Employee> {
 
 	private String name;
 	private int age;
 	private double salary;
-	private int ppfNum;
 
 	public String getName() {
 		return name;
@@ -32,28 +31,17 @@ public class Employee implements Cloneable{
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-
-		Employee e2 = (Employee) obj;
-
-		String name1 = this.getName();
-		String name2 = e2.getName();
-
-		return name1.equals(name2);
-
-//		int age1 = this.getAge();
-//		int age2 = e2.getAge();
-//		return age1 == age2;
-	}
-
-	@Override
 	public String toString() {
 		return "Employee [name=" + name + ", age=" + age + ", salary=" + salary + "]";
 	}
 
 	@Override
-	public Employee clone() throws CloneNotSupportedException {
-		return (Employee) super.clone();
+	public int compareTo(Employee emp) {
+		Employee e1 = this;
+		Employee e2 = emp;
+
+		return e1.getName().compareTo(e2.getName());
+
 	}
 
 }
