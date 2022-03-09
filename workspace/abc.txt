@@ -1,0 +1,11 @@
+Hi Ryan, 
+
+Thanks for the feedback. We could replicate the mentioned scenario. On analysis we found that as per the current design, on selecting all available zones for a well/run, all depth check box gets selected automatically assuming the all available zones together cover all depth. Now we understand that this assumption is inaccurate. 
+
+
+We have added it to our tasks list and would sure correct this behavior. Hope it is fine. 
+
+We will welcome your guidance. 
+
+Thanks & Regards
+Shadab
